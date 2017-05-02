@@ -22,6 +22,14 @@ public class Field {
     public Field() {
     }
 
+    public Field(Field field) {
+        this.experimentIndex=field.getExperimentIndex();
+        this.forest = field.getForest();
+        this.potato = field.getPotato();
+        this.grapes = field.getGrapes();
+        this.experimentIncome=field.getExperiemntIncome();
+        this.indexOfMaxIncome=field.getIndexOfMaxIncome();
+    }
     public Field(int forest, int potato, int grapes) {
         this.forest = forest;
         this.potato = potato;
@@ -97,9 +105,24 @@ public class Field {
     
     
      public  boolean checkConditions(){
-         if ((120*potato+580*grapes)<=1500){
-             return true;
-         } 
+         switch(OR_Lab2.subproblem){
+            case OR_Lab2.SUBPROBLEM_1:
+                if ((120*potato+580*grapes)<=1500){   // 500 lei to collect + 80 lei for seeds
+                    return true;
+                }
+                break;
+            case OR_Lab2.SUBPROBLEM_2:
+                if ((120*potato+500*grapes)<=1500){   // 500 lei to collect 
+                    return true;
+                }
+                break;
+            case OR_Lab2.SUBPROBLEM_3:
+                if ((120*potato+500*grapes)<=1500){   // 250 lei to collect + 80 lei for seeds
+                    return true;
+                }
+                break;
+         }
+         
         return false;
     }
 
