@@ -111,16 +111,16 @@ public class Field {
                     return true;
                 }
                 break;
-            case OR_Lab2.SUBPROBLEM_2:
-                if ((120*potato+500*grapes)<=1500){   // 500 lei to collect 
-                    return true;
-                }
-                break;
-            case OR_Lab2.SUBPROBLEM_3:
-                if ((120*potato+500*grapes)<=1500){   // 250 lei to collect + 80 lei for seeds
-                    return true;
-                }
-                break;
+//            case OR_Lab2.SUBPROBLEM_2:
+//                if ((120*potato+500*grapes)<=1500){   // 500 lei to collect 
+//                    return true;
+//                }
+//                break;
+//            case OR_Lab2.SUBPROBLEM_3:
+//                if ((120*potato+330*grapes)<=1500){   // 250 lei to collect + 80 lei for seeds
+//                    return true;
+//                }
+//                break;
          }
          
         return false;

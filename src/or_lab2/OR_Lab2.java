@@ -48,9 +48,17 @@ public class OR_Lab2 {
         System.out.println(" Optimal solution is : \n FOREST = "+bestConf.getForest()+
                 "\n POTATOES = "+bestConf.getPotato()+
                 "\n GRAPES = "+bestConf.getGrapes()+
-                "\n INCOME = "+bestConf.getExperiemntIncome());
+                "\nPROBLEM 1 : "+bestConf.getExperiemntIncome()+" Lei");
     
+        int  economy=1500-120*bestConf.getPotato()-500*bestConf.getGrapes();
+        functionValue=800*bestConf.getForest()+1600*bestConf.getPotato()+2400*bestConf.getGrapes() + economy;
     
+        System.out.println("PROBLEM 2 : "+functionValue+" Lei");
+        
+        economy=1500-120*bestConf.getPotato()-350*bestConf.getGrapes();
+        functionValue=800*bestConf.getForest()+1600*bestConf.getPotato()+1800*bestConf.getGrapes();
+        
+        System.out.println("PROBLEM 3 : "+functionValue+" Lei");
         
         
     }
@@ -75,16 +83,20 @@ public class OR_Lab2 {
     }
     
     private static void switchFunction(Field field){
+        int economy;
         switch(subproblem){
             case SUBPROBLEM_1:
-               functionValue=800*field.getForest()+1600*field.getPotato()+2400*field.getGrapes();// 800*6lei/L - 2400 lei/0,1km^2 =2400 lei
+               economy=1500-120*field.getPotato()-580*field.getGrapes();
+               functionValue=800*field.getForest()+1600*field.getPotato()+2400*field.getGrapes()+economy;// 800*6lei/L - 2400 lei/0,1km^2 =2400 lei
                break;
-            case SUBPROBLEM_2:
-               functionValue=800*field.getForest()+1600*field.getPotato()+2480*field.getGrapes(); // grape seeds cost +80 lei per 0,1 km^2
-               break;
-            case SUBPROBLEM_3:
-               functionValue=800*field.getForest()+1600*field.getPotato()+1800*field.getGrapes(); //(800-100L)*6lei/L - 2400 lei/0,1km^2 = 1800lei
-               break;
+//            case SUBPROBLEM_2:
+//               economy=1500-120*field.getPotato()-500*field.getGrapes();
+//               functionValue=800*field.getForest()+1600*field.getPotato()+2400*field.getGrapes() + economy; // grape seeds cost +80 lei per 0,1 km^2
+//               break;
+//            case SUBPROBLEM_3:
+//               economy=1500-120*field.getPotato()-350*field.getGrapes();
+//               functionValue=800*field.getForest()+1600*field.getPotato()+1800*field.getGrapes(); //(800-100L)*6lei/L - 2400 lei/0,1km^2 = 1800lei
+//               break;
         } 
         
    
